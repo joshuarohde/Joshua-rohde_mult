@@ -1,10 +1,6 @@
 .container {
     width: 100%;
     height: 100%;
-    padding-top: 194px;
-    padding-bottom: 197px;
-    padding-left: 496px;
-    padding-right: 495px;
     background: white;
     display: flex;
     flex-direction: column;
@@ -14,12 +10,15 @@
 }
 
 .quote {
+    margin-top: 4rem;
     align-self: stretch;
     padding: 10px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    font-size: 23rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .text {
