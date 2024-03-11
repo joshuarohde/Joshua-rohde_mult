@@ -17,16 +17,14 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    font-size: 23rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .text {
     color: black;
-    font-size: 12px;
-    font-family: Inter;
     font-weight: 400;
     word-wrap: break-word;
+    font-size: 1rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .image {
@@ -37,8 +35,18 @@
     gap: 10px;
 }
 
-.image img {
-    width: 409px;
-    height: 546px;
-    border-radius: 204.5px;
+.image2 {
+    padding: 10px;
+    display: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.image:hover {
+    display: none;
+}
+
+.image:hover + .image2{
+    display: inline-flex;
 }
