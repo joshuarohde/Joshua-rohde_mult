@@ -1,18 +1,55 @@
+// First, we'll create a message mixin, that will help us generate a series of related message classes.
+
+// We'll make sure our mixin has a default value for a background color, and that we're using nested styles to make it easier to define our classes.
+
+// Now, be sure to add a hover state, so that when we roll over a message, it highlights in some way.
+
+// Also, try to use a parent selector to help you build a variant of the main message class called Info.
+
+@mixin background-col ($background) {
+background-color: $background;
+}
+
+body{
+    @include background-col(#151515);
+}
+
 .msg {
-    border: 1px solid 
-#ddd;
+    @include background-col(#a1a1a1);
+
+
+    border: 1px solid #ddd;
     border-radius: 5px;
-    background: 
-#888;
     font-size: 1rem;
-    color: 
-white;
+    color: white;
     padding: 1rem 1.25rem;
     margin: 1em 0;
     display: inline-block;
     cursor: pointer;
+
+    &:hover{
+        @include background-col(#6b6b6b);
+    }
+
+    h1{ margin: 0 0 0.2em 0;}
+
   }
-  
-  .msg h1 {
-    margin: 0 0 0.2em 0;
+
+
+  .msg-info{
+    @include background-col(#42988e);
+
+    &:hover{
+        @include background-col(#346661);
+    }
   }
+
+// .msg{
+// h1{}
+// }
+
+// .msg-info{}
+
+
+
+

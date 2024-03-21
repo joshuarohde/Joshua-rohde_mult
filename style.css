@@ -1,7 +1,11 @@
+body {
+  background-color: #151515;
+}
+
 .msg {
+  background-color: #a1a1a1;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background: #888;
   font-size: 1rem;
   color: white;
   padding: 1rem 1.25rem;
@@ -9,7 +13,16 @@
   display: inline-block;
   cursor: pointer;
 }
-
+.msg:hover {
+  background-color: #6b6b6b;
+}
 .msg h1 {
   margin: 0 0 0.2em 0;
+}
+
+.msg-info {
+  background-color: #42988e;
+}
+.msg-info:hover {
+  background-color: #346661;
 }/*# sourceMappingURL=style.css.map */
