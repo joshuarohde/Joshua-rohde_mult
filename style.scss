@@ -10,8 +10,16 @@
 background-color: $background;
 }
 
+@mixin box-size ($x, $y){
+    max-width: $x;
+    min-width: $x;
+    min-height: $y;
+    max-height: $y;
+}
+
+
 body{
-    @include background-col(#151414);
+    @include background-col(#000000);
 }
 
 .msg {
@@ -27,12 +35,17 @@ body{
 
     border: 1px solid #dddddd96;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 0.9vw;
     color: white;
     padding: 1rem 1.25rem;
     margin: 1em 0;
     display: inline-block;
     cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    @include box-size(60vw,8vw);
+
+
 
     h1{ margin: 0 0 0.2em 0;}
 
@@ -56,10 +69,10 @@ body{
   .msg-warning{
     @extend .msg;
 
-    @include background-col(#b6aa3b);
+    @include background-col(#bca305);
 
     &:hover{
-        @include background-col(#877c37);
+        @include background-col(#7d5f12);
     }
   }
 
@@ -72,7 +85,6 @@ body{
         }
 
     }
-
 
 // .msg{
 // h1{}

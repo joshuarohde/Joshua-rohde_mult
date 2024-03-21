@@ -1,17 +1,22 @@
 body {
-  background-color: #151414;
+  background-color: #000000;
 }
 
 .msg, .msg-danger, .msg-warning, .msg-info {
   background-color: #a1a1a1;
   border: 1px solid rgba(221, 221, 221, 0.5882352941);
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 0.9vw;
   color: white;
   padding: 1rem 1.25rem;
   margin: 1em 0;
   display: inline-block;
   cursor: pointer;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  max-width: 60vw;
+  min-width: 60vw;
+  min-height: 8vw;
+  max-height: 8vw;
 }
 .msg:hover, .msg-danger:hover, .msg-warning:hover, .msg-info:hover {
   background-color: #6b6b6b;
@@ -28,10 +33,10 @@ body {
 }
 
 .msg-warning {
-  background-color: #b6aa3b;
+  background-color: #bca305;
 }
 .msg-warning:hover {
-  background-color: #877c37;
+  background-color: #7d5f12;
 }
 
 .msg-danger {
