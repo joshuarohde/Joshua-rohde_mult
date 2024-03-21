@@ -1,10 +1,10 @@
 body {
-  background-color: #151515;
+  background-color: #151414;
 }
 
-.msg {
+.msg, .msg-danger, .msg-warning, .msg-info {
   background-color: #a1a1a1;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(221, 221, 221, 0.5882352941);
   border-radius: 5px;
   font-size: 1rem;
   color: white;
@@ -13,10 +13,10 @@ body {
   display: inline-block;
   cursor: pointer;
 }
-.msg:hover {
+.msg:hover, .msg-danger:hover, .msg-warning:hover, .msg-info:hover {
   background-color: #6b6b6b;
 }
-.msg h1 {
+.msg h1, .msg-danger h1, .msg-warning h1, .msg-info h1 {
   margin: 0 0 0.2em 0;
 }
 
@@ -25,4 +25,18 @@ body {
 }
 .msg-info:hover {
   background-color: #346661;
+}
+
+.msg-warning {
+  background-color: #b6aa3b;
+}
+.msg-warning:hover {
+  background-color: #877c37;
+}
+
+.msg-danger {
+  background-color: #a32020;
+}
+.msg-danger:hover {
+  background-color: #751a1a;
 }/*# sourceMappingURL=style.css.map */
