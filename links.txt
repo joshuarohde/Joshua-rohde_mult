@@ -1,5 +1,0 @@
-Figma:
-https://www.figma.com/file/FwWvg0DJZmSjEInTTLWf8X/Untitled?type=design&mode=design&t=nC5g6WJ20U2wSfKo-1
-
-Github:
-https://github.com/joshuarohde/ex2-figtogit
