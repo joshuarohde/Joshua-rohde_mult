@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-<div class="px-5">
+<div class="px-5 mx-5">
       <div class="row mb-5 px-5 text-center">
         <div class="col-md-8 themed-grid-col ">
             <p class="text-start lead">Pigs, known scientifically as Sus scrofa domesticus, are highly intelligent and social animals that have been domesticated for thousands of years. They are omnivorous mammals belonging to the Suidae family. Pigs are renowned for their remarkable sense of smell, which is far more developed than that of humans, and they use it for foraging food. Despite the common misconception of pigs being dirty animals, they are actually quite clean and will designate specific areas within their habitat for waste disposal. Additionally, pigs are highly adaptable creatures, thriving in a variety of environments, from dense forests to agricultural landscapes. According to the Food and Agriculture Organization of the United Nations (FAO), pigs play a significant role in agriculture, providing meat products consumed worldwide, with China being the largest producer of pork. Furthermore, research published in the journal Animal Welfare affirms pigs' complex cognitive abilities, demonstrating their capacity for problem-solving and social interaction.</p>
@@ -55,9 +55,11 @@
         <div class="card">
           <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card 1</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">OINK</h5>
+            <p class="card-text">Oinks are a versatile vocalization that pigs use for various purposes, including communication within the group, expressing contentment, or signaling excitement.</p>
+            <a href="#" class="btn  bg-danger text-white" onclick="playAudio('media/oink.mp3', event)">
+              Example
+            </a>
           </div>
         </div>
       </div>
@@ -65,9 +67,11 @@
         <div class="card">
           <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card 2</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">SQUEAL</h5>
+            <p class="card-text">Squealing is a high-pitched vocalization often associated with distress, fear, or pain. Pigs may squeal when they are uncomfortable, frightened, or experiencing physical discomfort.</p>
+            <a href="#" class="btn  bg-danger text-white" onclick="playAudio('media/squeal.mp3', event)">
+              Example
+            </a>
           </div>
         </div>
       </div>
@@ -75,14 +79,88 @@
         <div class="card">
           <img class="card-img-top" src="https://via.placeholder.com/286x180" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card 3</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">GRUNT</h5>
+            <p class="card-text">Grunting is a low, guttural sound that pigs produce. Pigs may grunt when they are comfortable, satisfied, or simply communicating with other pigs in their group.</p>
+            <a href="#" class="btn  bg-danger text-white" onclick="playAudio('media/grunt.mp3', event)">
+              Example
+            </a>
+            <audio id="audio" src="your_audio_file.mp3"></audio>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="mt-5 pt-5">
+  <div class="px-5 mx-5">
+    <div class="row mb-5 px-5 text-center">
+      <div class="col-md-8 themed-grid-col ">
+          <p class="text-start lead">Pigs, known scientifically as Sus scrofa domesticus, are highly intelligent and social animals that have been domesticated for thousands of years. They are omnivorous mammals belonging to the Suidae family. Pigs are renowned for their remarkable sense of smell, which is far more developed than that of humans, and they use it for foraging food. Despite the common misconception of pigs being dirty animals, they are actually quite clean and will designate specific areas within their habitat for waste disposal. Additionally, pigs are highly adaptable creatures, thriving in a variety of environments, from dense forests to agricultural landscapes. According to the Food and Agriculture Organization of the United Nations (FAO), pigs play a significant role in agriculture, providing meat products consumed worldwide, with China being the largest producer of pork. Furthermore, research published in the journal Animal Welfare affirms pigs' complex cognitive abilities, demonstrating their capacity for problem-solving and social interaction.</p>
+      </div>
+      <div class="col-md-4 themed-grid-col">
+
+          <img src="media/pig-752557_1280.jpg" class="img-fluid" alt="Responsive image">
+
+
+      </div>
+    </div>
+</div >
+</div>
+
+
+
+<!-- SLIDE SLIDE SLIDE SLIDE SLIDE -->
+
+<h1>FUN FACTS!</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    function playAudio(audioSrc, event) {
+      event.preventDefault();
+      var audio = document.getElementById("audio");
+      audio.src = audioSrc;
+      audio.play();
+    }
+  </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
