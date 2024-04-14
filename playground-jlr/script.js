@@ -55,7 +55,7 @@ $(document).ready(function() {
 // SECTION 2
 
 $(document).ready(function() {
-    const correctAnswer = "ANSWER2";
+    const correctAnswer = "White";
     const options = $(".option");
     const resultMessage = $("#result");
 
@@ -80,3 +80,66 @@ $(document).ready(function() {
       }, 1000); // Change 1000 to the duration of the heartBeat animation if needed
     });
   });
+
+
+//   section 4
+console.log("Script loaded.");
+
+document.addEventListener('DOMContentLoaded', function () {
+    const clickImg = document.getElementById('clickImg');
+    const liveClickCount = document.getElementById('liveClickCount');
+    console.log("liveClickCount:", liveClickCount); // Add this line to check liveClickCount
+  
+  const timerDisplay = document.getElementById('timerDisplay');
+  const resultDisplay = document.getElementById('resultDisplay');
+  const startBtn = document.getElementById('startBtn');
+  let clicks = 0;
+  let timeLeft = 10;
+  let gameStarted = false;
+
+  function startGame() {
+    if (!gameStarted) {
+      gameStarted = true;
+      startBtn.disabled = true;
+      clickImg.style.pointerEvents = 'auto';
+      clicks = 0; // Reset clicks
+      timeLeft = 10; // Reset timeLeft
+      resultDisplay.textContent = ''; // Reset result display
+      timerDisplay.textContent = "READY? START BY CLICKING GEREMY!";
+      liveClickCount.textContent = "Live Click Count: 0"; // Reset live click count
+
+      clickImg.addEventListener('click', () => {
+        if (gameStarted) {
+          clicks++;
+          liveClickCount.textContent = `Live Click Count: ${clicks}`; // Update live click count
+          clickImg.classList.add('animate__animated', 'animate__rubberBand');
+          setTimeout(() => {
+            clickImg.classList.remove('animate__animated', 'animate__rubberBand');
+          }, 1000);
+
+          if (clicks === 1) {
+            startTimer();
+          }
+        }
+      });
+    }
+  }
+
+  function startTimer() {
+    const timerInterval = setInterval(() => {
+      timeLeft--;
+      timerDisplay.textContent = `Time Left: ${timeLeft}s`;
+
+      if (timeLeft === 0) {
+        clearInterval(timerInterval);
+        clickImg.style.pointerEvents = 'none';
+        resultDisplay.textContent = `Game Over! You made ${clicks} clicks.`;
+        resultDisplay.classList.add('animate__animated', 'animate__fadeInUp');
+        startBtn.disabled = false; // Enable the start button again
+        gameStarted = false; // Reset gameStarted
+      }
+    }, 1000);
+  }
+
+  startBtn.addEventListener('click', startGame);
+});

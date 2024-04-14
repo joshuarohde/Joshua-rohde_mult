@@ -31,12 +31,12 @@
 
             <div class="container">
                 <h2 class="text-center mx-4 mb-4 ">Trivia Question</h2>
-                <p class="text-center">QUESTION HERE</p>
+                <p class="text-center">What Kind Of Water Does Geremy Like?</p>
                 <div id="options" class="text-center">
-                    <button class="btn btn-info option">ANSWER1</button>
-                    <button class="btn btn-info option">ANSWER2</button>
-                    <button class="btn btn-info option">ANSWER3</button>
-                    <button class="btn btn-info option">ANSWER4</button>
+                    <button class="btn btn-info option">Salt</button>
+                    <button class="btn btn-info option">White</button>
+                    <button class="btn btn-info option">Dasani</button>
+                    <button class="btn btn-info option">Tap</button>
                 </div>
                 <p id="result" class="text-center"></p>
             </div>
@@ -54,10 +54,20 @@
 
     <section id="choose-your-own-adventure">
         <h2>Section 4: Choose-Your-Own-Adventure</h2>
-        <!-- This is your creative space! -->
-    </section>
+        <div class="container text-center mt-5">
+          <h1 class="mb-4">Click Counter Game</h1>
+          <p id="liveClickCount" class="mb-2">Live Click Count: 0</p>
+          <!-- Replace the button with an image -->
+          <img id="clickImg" src="media/Image20230913131647.jpg" alt="Click Me" class="img-fluid">
+          <p id="timerDisplay" class="mt-3"></p>
+          <p id="resultDisplay" class="mt-3"></p>
+          <!-- Add a button to start the game -->
+          <button id="startBtn" class="btn btn-primary">Start</button>
+        </div>
+      </section>
+      
 
     <!-- Remember to add your JavaScript file link here if you create one -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

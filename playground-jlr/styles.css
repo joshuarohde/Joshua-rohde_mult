@@ -99,7 +99,6 @@ button {
 }
  .moving-content {
     position: absolute;
-    top: 74vw;
     left: 45vw;
     display: flex;
     justify-content: center;
@@ -109,4 +108,24 @@ button {
     height: auto; /* Maintain aspect ratio */
   }
 /* section 4 */
+
+#choose-your-own-adventure {
+    min-height: 600px;
+}
+
+
+
+.color-box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+
+
+
+
+
+
 
