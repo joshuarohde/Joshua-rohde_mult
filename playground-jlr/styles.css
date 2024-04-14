@@ -80,3 +80,33 @@ button {
     grid-column: 3;
     grid-row: 2;
 }
+
+
+
+
+
+
+/* Section 3 */
+
+#space{
+    min-height: 40vw;
+    background-image: url(media/stars-2643089_1920.jpg);
+    background-repeat: no-repeat;
+}
+
+#scroll-activated-image{
+    background-color: black;
+}
+ .moving-content {
+    position: absolute;
+    top: 74vw;
+    left: 45vw;
+    display: flex;
+    justify-content: center;
+  }
+  .moving-content img {
+    max-width: 100%; /* Ensure image doesn't exceed the width of its container */
+    height: auto; /* Maintain aspect ratio */
+  }
+/* section 4 */
+

@@ -68,3 +68,15 @@ $(document).ready(function() {
         }
     });
   });
+
+//   SECTION 3
+
+$(document).ready(function() {
+    $(window).scroll(function() {
+      $('.moving-content').addClass('animate__heartBeat');
+      $('.moving-content').removeClass('');
+      setTimeout(function(){
+        $('.moving-content').removeClass('animate__heartBeat');
+      }, 1000); // Change 1000 to the duration of the heartBeat animation if needed
+    });
+  });
