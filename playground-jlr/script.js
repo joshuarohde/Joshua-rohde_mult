@@ -52,3 +52,19 @@ $(document).ready(function() {
     }).mouseup(stopMoving);
 });
 
+// SECTION 2
+
+$(document).ready(function() {
+    const correctAnswer = "ANSWER2";
+    const options = $(".option");
+    const resultMessage = $("#result");
+
+    options.click(function() {
+        const selectedAnswer = $(this).text().trim();
+        if (selectedAnswer === correctAnswer) {
+            resultMessage.text("Correct!").removeClass("text-danger").addClass("text-success");
+        } else {
+            resultMessage.text("Try again!").removeClass("text-success").addClass("text-danger");
+        }
+    });
+  });
