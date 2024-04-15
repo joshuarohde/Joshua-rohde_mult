@@ -1,9 +1,9 @@
 $(document).ready(function() {
-    var interval; // Variable to hold the interval ID
+    let interval; // Variable to hold the interval ID
 
     function moveImage(direction) {
-        var distance = 10; // Distance to move in pixels
-        var speed = 'fast'; // Animation speed
+        let distance = 10; // Distance to move in pixels
+        let speed = 'fast'; // Animation speed
 
         // Determine the direction and axis of movement
         var properties = {};
