@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // SECTION 1: Image Movement
     let interval; // Variable to hold the interval ID
 
     function moveImage(direction) {
@@ -50,11 +51,8 @@ $(document).ready(function() {
     $("#right").mousedown(function() {
         startMoving("right");
     }).mouseup(stopMoving);
-});
 
-// SECTION 2
-
-$(document).ready(function() {
+    // SECTION 2: Quiz
     const correctAnswer = "White";
     const options = $(".option");
     const resultMessage = $("#result");
@@ -67,79 +65,69 @@ $(document).ready(function() {
             resultMessage.text("Try again!").removeClass("text-success").addClass("text-danger");
         }
     });
-  });
 
-//   SECTION 3
-
-$(document).ready(function() {
+    // SECTION 3: Animation on Scroll
     $(window).scroll(function() {
-      $('.moving-content').addClass('animate__heartBeat');
-      $('.moving-content').removeClass('');
-      setTimeout(function(){
-        $('.moving-content').removeClass('animate__heartBeat');
-      }, 1000); // Change 1000 to the duration of the heartBeat animation if needed
+        $('.moving-content').addClass('animate__heartBeat');
+        $('.moving-content').removeClass('');
+        setTimeout(function(){
+            $('.moving-content').removeClass('animate__heartBeat');
+        }, 1000); // Change 1000 to the duration of the heartBeat animation if needed
     });
-  });
 
+    // SECTION 4: Click Game
+    const clickImg = $('#clickImg');
+    const liveClickCount = $('#liveClickCount');
+    const timerDisplay = $('#timerDisplay');
+    const resultDisplay = $('#resultDisplay');
+    const startBtn = $('#startBtn');
+    let clicks = 0;
+    let timeLeft = 10;
+    let gameStarted = false;
 
-//   section 4
-console.log("Script loaded.");
+    function startGame() {
+        if (!gameStarted) {
+            gameStarted = true;
+            startBtn.prop('disabled', true);
+            clickImg.css('pointer-events', 'auto');
+            clicks = 0; // Reset clicks
+            timeLeft = 10; // Reset timeLeft
+            resultDisplay.text(''); // Reset result display
+            timerDisplay.text("READY? START BY CLICKING GEREMY!");
+            liveClickCount.text("Live Click Count: 0"); // Reset live click count
 
-document.addEventListener('DOMContentLoaded', function () {
-    const clickImg = document.getElementById('clickImg');
-    const liveClickCount = document.getElementById('liveClickCount');
-    console.log("liveClickCount:", liveClickCount); // Add this line to check liveClickCount
-  
-  const timerDisplay = document.getElementById('timerDisplay');
-  const resultDisplay = document.getElementById('resultDisplay');
-  const startBtn = document.getElementById('startBtn');
-  let clicks = 0;
-  let timeLeft = 10;
-  let gameStarted = false;
+            clickImg.on('click', () => {
+                if (gameStarted) {
+                    clicks++;
+                    liveClickCount.text(`Live Click Count: ${clicks}`); // Update live click count
+                    clickImg.addClass('animate__animated animate__rubberBand');
+                    setTimeout(() => {
+                        clickImg.removeClass('animate__animated animate__rubberBand');
+                    }, 1000);
 
-  function startGame() {
-    if (!gameStarted) {
-      gameStarted = true;
-      startBtn.disabled = true;
-      clickImg.style.pointerEvents = 'auto';
-      clicks = 0; // Reset clicks
-      timeLeft = 10; // Reset timeLeft
-      resultDisplay.textContent = ''; // Reset result display
-      timerDisplay.textContent = "READY? START BY CLICKING GEREMY!";
-      liveClickCount.textContent = "Live Click Count: 0"; // Reset live click count
-
-      clickImg.addEventListener('click', () => {
-        if (gameStarted) {
-          clicks++;
-          liveClickCount.textContent = `Live Click Count: ${clicks}`; // Update live click count
-          clickImg.classList.add('animate__animated', 'animate__rubberBand');
-          setTimeout(() => {
-            clickImg.classList.remove('animate__animated', 'animate__rubberBand');
-          }, 1000);
-
-          if (clicks === 1) {
-            startTimer();
-          }
+                    if (clicks === 1) {
+                        startTimer();
+                    }
+                }
+            });
         }
-      });
     }
-  }
 
-  function startTimer() {
-    const timerInterval = setInterval(() => {
-      timeLeft--;
-      timerDisplay.textContent = `Time Left: ${timeLeft}s`;
+    function startTimer() {
+        const timerInterval = setInterval(() => {
+            timeLeft--;
+            timerDisplay.text(`Time Left: ${timeLeft}s`);
 
-      if (timeLeft === 0) {
-        clearInterval(timerInterval);
-        clickImg.style.pointerEvents = 'none';
-        resultDisplay.textContent = `Game Over! You made ${clicks} clicks.`;
-        resultDisplay.classList.add('animate__animated', 'animate__fadeInUp');
-        startBtn.disabled = false; // Enable the start button again
-        gameStarted = false; // Reset gameStarted
-      }
-    }, 1000);
-  }
+            if (timeLeft === 0) {
+                clearInterval(timerInterval);
+                clickImg.css('pointer-events', 'none');
+                resultDisplay.text(`Game Over! You made ${clicks} clicks.`);
+                resultDisplay.addClass('animate__animated animate__fadeInUp');
+                startBtn.prop('disabled', false); // Enable the start button again
+                gameStarted = false; // Reset gameStarted
+            }
+        }, 1000);
+    }
 
-  startBtn.addEventListener('click', startGame);
+    startBtn.click(startGame);
 });
